@@ -1,0 +1,122 @@
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+   display: flex;
+   width: 60%;
+   overflow: hidden;
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+.container .image {
+   width: 40%;
+}
+
+@media (max-width: 768px) {
+    .container .image {
+        width: 100%;
+    }
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .container .content {
+        width: 100%;
+        border-top-right-radius: 0px;
+    }
+}
+
+.content .tab {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+    .content .tab {
+        flex-direction: column;
+    }
+}
+
+.content .tab button {
+    width: calc(100% / 3);
+    padding: 10px;
+    transition: .3s;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .content .tab button {
+        width: 100%;
+    }
+}
+
+.content .tab button:hover {
+    background-color: #ccc;
+}
+
+.content .tab button.active {
+    background-color: #fff;
+    color: #000;
+}
+
+.content .tab_content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+}
+
+.content .tab_content p {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #777;
+    text-align: start;
+    line-height: 30px;
+}
+
+.content .tab_content .active {
+    display: block;
+}
